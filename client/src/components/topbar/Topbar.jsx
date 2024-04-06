@@ -19,7 +19,7 @@ const Topbar = () => {
   const [search, setSearch] = useState("");
   const searchRef = useRef(null);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   const handleSearch = async () => {
     const username = searchRef.current.value;
     if (!username) {
@@ -46,7 +46,9 @@ const Topbar = () => {
   };
   const getUser = async (username) => {
     try {
-      const response = await axios.get(`/users/`, { params: { username } });
+      const response = await axios.get(`${apiUrl}/users/`, {
+        params: { username },
+      });
       return response.data;
     } catch (error) {
       throw error;

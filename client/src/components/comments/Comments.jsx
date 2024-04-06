@@ -11,11 +11,14 @@ export const Comments = ({ post, toggleComments, isViewComments }) => {
   const ref = useRef();
   const [comments, setComments] = useState([]);
   const [isCommented, setIsCommented] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     const fetchComments = async () => {
       if (post && post._id) {
         try {
-          const response = await axios.get(`/posts/${post._id}/comment`);
+          const response = await axios.get(
+            `${apiUrl}/posts/${post._id}/comment`
+          );
           console.log(response.data);
           setComments(response.data);
 
@@ -60,7 +63,7 @@ export const Comments = ({ post, toggleComments, isViewComments }) => {
 
     try {
       const response = await axios.post(
-        `/posts/${post._id}/comment`,
+        `${apiUrl}/posts/${post._id}/comment`,
         tempComment
       );
       setIsCommented(true);

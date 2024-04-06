@@ -20,11 +20,11 @@ export default function Profile() {
   const imgRef = useRef(null);
   const { user: currentUser } = useContext(AuthContext);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`/users/?username=${username}`);
+        const res = await axios.get(`${apiUrl}/users/?username=${username}`);
         setUser(res.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -55,7 +55,7 @@ export default function Profile() {
         data.append("name", fileName);
         data.append("file", profilePicture);
         try {
-          const response = await axios.post("/upload", data);
+          const response = await axios.post(`${apiUrl}/upload`, data);
           requestData.profilePicture = response.data;
           currentUser.profilePicture = requestData.profilePicture;
           setDp(requestData.profilePicture);
@@ -63,7 +63,11 @@ export default function Profile() {
           console.log(err);
         }
       }
-      const response = await axios.put(`/users/${user._id}`, requestData, {});
+      const response = await axios.put(
+        `${apiUrl}/users/${user._id}`,
+        requestData,
+        {}
+      );
 
       console.log("Profile picture updated:", response.data);
       setProfilePicture(null);

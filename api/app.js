@@ -20,8 +20,8 @@ const aws = require("aws-sdk");
 const multerS3 = require("multer-s3");
 
 const allowedOrigins = [
-  "https://your-vercel-app.vercel.app",
   "http://localhost:3000",
+  "https://go-social-murex.vercel.app",
 ];
 app.use(
   cors({

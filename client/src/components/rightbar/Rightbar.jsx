@@ -14,7 +14,7 @@ export default function Rightbar({ user }) {
   const { user: currentUser, dispatch } = useContext(AuthContext);
   const [followed, setFollowed] = useState(false);
   const [adIndex, setAdIndex] = useState(0);
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     setFollowed(currentUser.followings.includes(user?._id));
   }, [currentUser, user]);
@@ -22,7 +22,9 @@ export default function Rightbar({ user }) {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendList = await axios.get("/users/friends/" + user?._id);
+        const friendList = await axios.get(
+          `${apiUrl}/users/friends/` + user?._id
+        );
         setFriends(friendList.data);
       } catch (error) {
         console.log(error);
@@ -40,12 +42,12 @@ export default function Rightbar({ user }) {
   const handleFollowClick = async () => {
     try {
       if (followed) {
-        await axios.put("/users/" + user._id + "/unfollow", {
+        await axios.put(`${apiUrl}/users/` + user._id + "/unfollow", {
           userId: currentUser._id,
         });
         dispatch({ type: "UNFOLLOW", payload: user._id });
       } else {
-        await axios.put("/users/" + user._id + "/follow", {
+        await axios.put(`${apiUrl}/users/` + user._id + "/follow", {
           userId: currentUser._id,
         });
         dispatch({ type: "FOLLOW", payload: user._id });

@@ -10,6 +10,7 @@ export default function Register() {
   const passwordAgain = useRef();
   const [file, setFile] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
   //useHistory for redirecting the user to login page
   const navigate = useNavigate();
   const handleClick = async (e) => {
@@ -30,7 +31,7 @@ export default function Register() {
         dp.append("file", file);
 
         try {
-          const response = await axios.post("/upload", dp);
+          const response = await axios.post(`${apiUrl}/upload`, dp);
           user.profilePicture = response.data; // Set the img field to the received image URL
         } catch (err) {
           console.log(err);
@@ -38,7 +39,7 @@ export default function Register() {
       }
       try {
         setIsFetching(true);
-        await axios.post("/auth/register", user);
+        await axios.post(`${apiUrl}/auth/register`, user);
         navigate("/login");
         setIsFetching(false);
       } catch (err) {

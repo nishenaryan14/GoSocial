@@ -10,14 +10,14 @@ export const Comment = ({ comment, post }) => {
   const PublicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
   const [like, setLike] = useState(comment.likes ? comment.likes.length : 0);
   const [isLiked, setIsLiked] = useState(false);
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     setIsLiked(comment.likes?.includes(currentUser._id));
   }, [currentUser._id, comment.likes, comment._id]);
 
   const handleLike = () => {
     try {
-      axios.put("/posts/" + post._id + "/comment/like", {
+      axios.put(`${apiUrl}/posts/" + post._id + "/comment/like`, {
         _id: comment._id,
         userId: currentUser._id,
       });

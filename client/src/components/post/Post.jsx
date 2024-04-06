@@ -42,6 +42,7 @@ export default function Post({
   const [editedPostText, setEditedPostText] = useState(post.desc);
   const [viewLikedUser, setViewLikedUser] = useState(false);
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     setLike(post.likes ? post.likes.length : 0);
     setIsLiked(post.likes?.includes(currentUser._id));
@@ -49,7 +50,9 @@ export default function Post({
 
   const handleLike = () => {
     try {
-      axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
+      axios.put(`${apiUrl}/posts/` + post._id + "/like", {
+        userId: currentUser._id,
+      });
     } catch (err) {}
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
@@ -61,7 +64,7 @@ export default function Post({
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`/users?userId=${post.userId}`);
+        const res = await axios.get(`${apiUrl}/users?userId=${post.userId}`);
         // console.log(res);
         setUser(res.data);
       } catch (error) {
@@ -73,7 +76,7 @@ export default function Post({
 
   const updatePost = async (postId, userId, updatedData) => {
     try {
-      const response = await axios.put(`/posts/${postId}`, {
+      const response = await axios.put(`${apiUrl}/posts/${postId}`, {
         userId,
         desc: updatedData,
       });
@@ -85,7 +88,7 @@ export default function Post({
   };
   const deletePost = async (postId, userId) => {
     try {
-      const response = await axios.delete(`/posts/${postId}`, {
+      const response = await axios.delete(`${apiUrl}/posts/${postId}`, {
         data: { userId },
       });
       updateDeletedPosts(postId);

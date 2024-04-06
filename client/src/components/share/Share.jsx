@@ -23,7 +23,7 @@ export default function Share({ updatePosts }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [postContext, setPostContext] = useState(false);
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   const submitHandler = async (e) => {
     setLoading(true);
     e.preventDefault();
@@ -39,7 +39,7 @@ export default function Share({ updatePosts }) {
       data.append("name", fileName);
       data.append("file", file);
       try {
-        const response = await axios.post("/upload", data);
+        const response = await axios.post(`${apiUrl}/upload`, data);
         // console.log(response);
         newPost.img = response.data; // Set the img field to the received image URL
       } catch (err) {
@@ -47,7 +47,7 @@ export default function Share({ updatePosts }) {
       }
     }
     try {
-      await axios.post("/posts", newPost);
+      await axios.post(`${apiUrl}/posts`, newPost);
       desc.current.value = "";
       setFile(null);
       setLoading(false);
