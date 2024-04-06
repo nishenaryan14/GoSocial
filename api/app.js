@@ -13,10 +13,27 @@ const router = express.Router();
 const path = require("path");
 const PORT = process.env.PORT || 8800;
 const compression = require("compression");
+const cors = require("cors");
+
 app.use(compression());
 const aws = require("aws-sdk");
 const multerS3 = require("multer-s3");
 
+const allowedOrigins = [
+  "https://your-vercel-app.vercel.app",
+  "http://localhost:3000",
+];
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
