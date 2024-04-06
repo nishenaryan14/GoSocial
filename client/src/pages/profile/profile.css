@@ -1,0 +1,100 @@
+.profile {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.editOption {
+  cursor: pointer;
+  position: absolute;
+  z-index: 20;
+  top: 30px;
+  padding: 5px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.editBtn {
+  cursor: pointer;
+  position: absolute;
+  z-index: 20;
+  top: 330px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.profileRight {
+  flex: 9;
+}
+.profileRightTop {
+  /* background-color: aliceblue; */
+}
+.profileCover {
+  height: 320px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.profileCoverImg {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.profileUserImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 200px;
+  border: 3px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profileUserImg:hover {
+  /* opacity: 0.9; */
+  border: 5px solid white;
+}
+.profileInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profileInfoName {
+  text-align: center;
+  width: 100%;
+  background-color: whitesmoke;
+  font-size: 24px;
+}
+.profileInfoDesc {
+  font-weight: 300;
+}
+.profileRightBottom {
+  background-color: whitesmoke;
+  display: flex;
+}
+
+.mobileProfile {
+  flex-direction: column-reverse;
+}

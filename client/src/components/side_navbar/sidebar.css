@@ -1,0 +1,146 @@
+.sidebarParent {
+  background-color: #431161;
+  background-color: #03539e;
+  color: white;
+  width: max-content;
+}
+.sidebarMain {
+  position: relative;
+  padding-top: 50px;
+  /* height: calc(100vh - 50px); */
+  /* margin-top: 50px; */
+  height: 100%;
+  border: none;
+  border-right: 1px solid #431161;
+}
+
+.sidebarLogo {
+  background-color: inherit;
+  color: inherit;
+  padding-top: 11px;
+  width: 70px;
+  margin-bottom: 11px;
+  border: none;
+}
+
+.sidebarParent {
+  position: relative;
+}
+.sidebarCross,
+.sidebarHamIcon {
+  cursor: pointer;
+  position: absolute;
+  z-index: 6;
+  top: 15px;
+  left: 19px;
+}
+.sidebarCross {
+  height: max-content;
+  width: max-content;
+}
+.sidebarHamIcon {
+  background-color: lavender;
+  padding: 5px;
+  margin-left: 4px;
+  border-radius: 50%;
+  font-size: 22px !important;
+}
+
+.sidebarList {
+  position: relative;
+}
+.list-item {
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  padding: 15px;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebarListText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.highlightedContent {
+  position: absolute;
+  top: 10px;
+  width: 90%;
+  height: 36px;
+  border-radius: 11px;
+  opacity: 1;
+  background-color: rgba(158, 190, 248, 0.797);
+  transition: transform 0.3s ease;
+}
+.noHighlight {
+  opacity: 0;
+  transition: transform 0.3s ease;
+}
+
+.userDiv {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  display: flex;
+  width: 85%;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 4px;
+  background-color: rgb(203, 203, 228);
+
+  border-radius: 24px;
+  cursor: pointer;
+}
+.userImgDiv {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.userInfoDiv {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userNameInfo {
+  margin: 0;
+}
+.userEmailInfo {
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+}
+.sidebarCollapsed {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapsedUserDiv {
+  left: 0;
+  margin-left: 10px;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.light {
+  background-color: white;
+  color: #431161;
+}

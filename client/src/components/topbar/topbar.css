@@ -1,0 +1,140 @@
+.topbarContainer {
+  height: 50px;
+  width: 100vw;
+  background-color: #431161;
+  background-color: #03539e;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  border: none;
+  /* border-bottom: 1px solid #431161; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+}
+
+.topbarLeft {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  margin-left: 13px;
+  justify-content: flex-start;
+  /* justify-content: center; */
+}
+.logo {
+  font-size: 26px;
+  /* margin-left: 35px; */
+  color: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+.logo.dark {
+  color: #431161;
+}
+.topbarCenter {
+  margin-left: 60px;
+  flex: 5;
+}
+.searchbar {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #001427;
+  border-radius: 30px;
+  padding: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.searchbar:active {
+  outline: #18f2ca;
+  border: 2px solid black;
+}
+
+.searchInput {
+  border: none;
+  width: 70%;
+}
+.search {
+  cursor: pointer;
+  color: grey;
+}
+/* .searchInput:not(:placeholder-shown) {
+  border: 1px solid #1877f2;
+} */
+.searchInput:focus {
+  outline: none;
+}
+.searchIcon {
+  font-size: 20px !important;
+  margin-left: 10px;
+}
+.topbarRight {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+.topbarRightWrapper {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.topbarRightWrapperCollapse {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.toggle {
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  width: max-content;
+  cursor: pointer;
+}
+.topbarLink {
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.topbarIcons {
+  display: flex;
+}
+.topbarIconItem {
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.topbarIconBadge {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.topbarImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.light {
+  background-color: white;
+  color: #431161;
+}

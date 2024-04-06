@@ -1,0 +1,41 @@
+.comments {
+  width: 87%;
+  padding: 10px;
+}
+.commentInput {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comments input {
+  padding: 5px;
+  width: 75%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 1px solid black;
+}
+
+.viewComments {
+  color: #03539e;
+  cursor: pointer;
+}
+
+.commentsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  padding: 20px;
+  font-size: 12px;
+  width: 90%;
+  font-weight: 300;
+  position: absolute;
+}
+
+.postComment {
+  font-size: 18px;
+  color: #03539e;
+}

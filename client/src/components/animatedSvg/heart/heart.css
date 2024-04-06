@@ -1,0 +1,37 @@
+.heartIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  transform: translate(-50%, -50%);
+}
+.heartIcon path {
+  transition: fill 0.3s ease;
+}
+
+.heartIcon.liked path {
+  fill: rgb(248, 56, 56);
+  animation: heartBeat 1.2s ease infinite;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,67 @@
+.feed {
+  flex: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.feedWrapper {
+  width: 100%;
+  height: max-content;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 20px; */
+  padding-top: 48px;
+}
+.listContainer {
+  width: 100%;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important;
+  height: max-content !important;
+  scrollbar-width: 0 !important;
+}
+.ReactVirtualized__Grid__innerScrollContainer {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.postList {
+  display: flex;
+  justify-content: center;
+}
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 70px 0;
+}
+.noPost {
+  color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+.noPostImg {
+  margin-top: 49px;
+  height: 90px;
+  width: 90px;
+  padding: 12px;
+  font-size: 150px;
+  border: 9px solid lightgray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noPostText {
+  font-size: 32px;
+}

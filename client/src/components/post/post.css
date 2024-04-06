@@ -1,0 +1,138 @@
+.post {
+  /* width: 70%; */
+  height: 90%;
+  min-width: 355px;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin: 30px 0;
+}
+
+.postWrapper {
+  height: 97%;
+  /* height: max-content; */
+  /* overflow: hidden; */
+  padding: 24px;
+}
+
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.postTopLeft {
+  display: flex;
+  align-items: center;
+}
+.postTopRight {
+  display: flex;
+  gap: 15px;
+}
+.postTopRightOption {
+  position: relative;
+  cursor: pointer;
+  color: darkslategray;
+}
+.postTopRightOption:hover {
+  color: rgb(154, 155, 155);
+}
+.postProfileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postUsername {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.postDate {
+  font-size: 12px;
+}
+
+.postCenter {
+  /* max-height: 290px; */
+  height: max-content;
+  overflow: hidden;
+  position: relative;
+  min-width: 60%;
+  margin: 20px auto;
+}
+.textArea {
+  min-width: 330px;
+  height: max-content;
+  padding: 0 12px;
+  border-radius: 7px;
+  width: max-content;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.caption {
+  min-width: 250px;
+  width: 80%;
+  outline: none;
+  border: none;
+  height: 100%;
+  font-size: 19px;
+  /* margin: 0 28px; */
+}
+.textArea span {
+  color: rgb(248, 233, 100);
+  cursor: pointer;
+}
+.postImgDiv {
+  height: 270px;
+  /* width: 540px; */
+  width: 100%;
+  justify-self: center;
+}
+.postImg {
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* object-position: center; */
+}
+
+.postHeartTransition {
+}
+.postBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  /* align-items: center;
+  justify-content: space-between; */
+}
+
+.postBottomLeft {
+  display: flex;
+  align-items: center;
+}
+.likeIcon {
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+  color: rgb(240, 93, 93);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.postLikeCounter {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.postBottomRight {
+  width: 100%;
+}
+.postCommentText {
+  font-size: 15px;
+  cursor: pointer;
+  border-bottom: 1px dashed gray;
+}

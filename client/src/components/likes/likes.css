@@ -1,0 +1,14 @@
+.likesParent {
+  position: absolute;
+  left: 0;
+  /* bottom: -123px; */
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 13px;
+}
+.likedUser {
+  margin-left: 14px;
+}
