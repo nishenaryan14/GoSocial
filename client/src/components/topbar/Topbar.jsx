@@ -46,7 +46,7 @@ const Topbar = () => {
   };
   const getUser = async (username) => {
     try {
-      const response = await axios.get(`/api/users/`, { params: { username } });
+      const response = await axios.get(`/users/`, { params: { username } });
       return response.data;
     } catch (error) {
       throw error;

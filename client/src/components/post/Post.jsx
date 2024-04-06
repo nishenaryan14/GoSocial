@@ -49,9 +49,7 @@ export default function Post({
 
   const handleLike = () => {
     try {
-      axios.put("/api/posts/" + post._id + "/like", {
-        userId: currentUser._id,
-      });
+      axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
     } catch (err) {}
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
@@ -63,7 +61,7 @@ export default function Post({
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`/api/users?userId=${post.userId}`);
+        const res = await axios.get(`/users?userId=${post.userId}`);
         // console.log(res);
         setUser(res.data);
       } catch (error) {
@@ -75,7 +73,7 @@ export default function Post({
 
   const updatePost = async (postId, userId, updatedData) => {
     try {
-      const response = await axios.put(`/api/posts/${postId}`, {
+      const response = await axios.put(`/posts/${postId}`, {
         userId,
         desc: updatedData,
       });
@@ -87,7 +85,7 @@ export default function Post({
   };
   const deletePost = async (postId, userId) => {
     try {
-      const response = await axios.delete(`/api/posts/${postId}`, {
+      const response = await axios.delete(`/posts/${postId}`, {
         data: { userId },
       });
       updateDeletedPosts(postId);

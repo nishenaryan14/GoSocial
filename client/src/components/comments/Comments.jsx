@@ -15,7 +15,7 @@ export const Comments = ({ post, toggleComments, isViewComments }) => {
     const fetchComments = async () => {
       if (post && post._id) {
         try {
-          const response = await axios.get(`/api/posts/${post._id}/comment`);
+          const response = await axios.get(`/posts/${post._id}/comment`);
           console.log(response.data);
           setComments(response.data);
 
@@ -60,7 +60,7 @@ export const Comments = ({ post, toggleComments, isViewComments }) => {
 
     try {
       const response = await axios.post(
-        `/api/posts/${post._id}/comment`,
+        `/posts/${post._id}/comment`,
         tempComment
       );
       setIsCommented(true);

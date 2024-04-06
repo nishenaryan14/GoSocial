@@ -30,7 +30,7 @@ export default function Register() {
         dp.append("file", file);
 
         try {
-          const response = await axios.post("/api/upload", dp);
+          const response = await axios.post("/upload", dp);
           user.profilePicture = response.data; // Set the img field to the received image URL
         } catch (err) {
           console.log(err);
@@ -38,7 +38,7 @@ export default function Register() {
       }
       try {
         setIsFetching(true);
-        await axios.post("/api/auth/register", user);
+        await axios.post("/auth/register", user);
         navigate("/login");
         setIsFetching(false);
       } catch (err) {
