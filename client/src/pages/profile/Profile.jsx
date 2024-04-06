@@ -24,7 +24,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`/users/?username=${username}`);
+        const res = await axios.get(`/api/users/?username=${username}`);
         setUser(res.data);
       } catch (error) {
         console.error("Error fetching users:", error);

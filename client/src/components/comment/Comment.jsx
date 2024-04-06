@@ -17,7 +17,7 @@ export const Comment = ({ comment, post }) => {
 
   const handleLike = () => {
     try {
-      axios.put("/posts/" + post._id + "/comment/like", {
+      axios.put("/api/posts/" + post._id + "/comment/like", {
         _id: comment._id,
         userId: currentUser._id,
       });

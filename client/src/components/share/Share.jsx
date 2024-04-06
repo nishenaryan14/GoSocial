@@ -39,7 +39,7 @@ export default function Share({ updatePosts }) {
       data.append("name", fileName);
       data.append("file", file);
       try {
-        const response = await axios.post("/upload", data);
+        const response = await axios.post("/api/upload", data);
         // console.log(response);
         newPost.img = response.data; // Set the img field to the received image URL
       } catch (err) {
