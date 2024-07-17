@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "echo 'No build step'"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "multer-s3": "^2.10.0",
     "node-cache": "^5.1.2",
     "nodemon": "^3.0.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "socket.io": "^4.7.5"
   }
 }
